@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Event Page</title>
+
+    <style>
+    #eventsForYou{
+        font-family: 'Reenie Beanie', cursive;
+        margin-left:5px;
+        font-size: 1em;
+    }
+
+    </style>
+</head>
+
+<body>
+            {% if city_event_destination %}
+                <h1 style="margin-left:5%;">{{ city_event_destination.destination }} <small id="eventsForYou">events for you</small></h1>
+            {% endif %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+            {% for event in events %}
+            <div class="row" style="margin-top:5%">
+                    <div class="col-xs-12 col-sm-6 col-md-8">
+                    <h3 id="eventName">{{ event.event_name }} </h3>
+
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-sm-5" >
+                                When? {{ event.event_date }} at {{ event.event_time }}<br>
+                                Where? {{ event.event_location }}<br>
+                                Tell me more! Cost: {{ event.event_cost }}<br>
+                                Theme: {{ event.event_theme }}
+                            </div>
+                            <div class="col-sm-6" style="margin-left:5%">
+                                {{event.event_description}}<br><br>
+                            </div>
+                          </div>
+
+                        </div>
+
+                    </div>
+            </div>
+            {% endfor %}
+        {% endblock %}
+    </div>
+  </div>
+</div>
+
+
+</script>
+</body>
+</html>

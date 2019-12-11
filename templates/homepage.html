@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to FlightPassport</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet">
+<style>
+#homepage-block{
+    margin-left: 5%;
+}
+#homepage-title-small{
+    font-family: 'Reenie Beanie', cursive;
+    margin-left:5px;
+    font-size: 1em;
+}
+#homepageGreeting{
+    text-align: center;
+
+}
+object{
+    position:relative;
+    left:25%;
+}
+form {
+    text-align: center;
+}
+#whereTo{
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+.destination{
+    font-size: 1.1em;
+    color: #000333;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+#disabledInput{
+    width: 15%;
+}
+#homepageSubmit{
+    background-color:orange;
+    color:white;
+    width:10%;
+}
+</style>
+</head>
+<body>
+    <div id="homepage-block">
+        <h1 id="homepage-title">FlightPassport</h1>
+        <p style="font-style: italic;">Be able to fly anywhere you wish!</p>
+        <br>
+    </div>
+        <br>
+    <object><iframe src="https://player.vimeo.com/video/29070512?background=1" id="homepageVideo" width="740" height="417" frameborder="0"></iframe></object><br><br>
+
+
+<div class="jumbotron">
+<form action='/city_page' method='POST' class="form-inline" class=homeCitySearch>
+    <div class="form-group">
+    <label for="destination" id="whereTo">Where to?:</label>
+    <input list="destination" class="form-group" name="destination" placeholder="city name" style="background-color:white; width:250px; height: 30px;">
+          <datalist class="destination">
+                <option value="Atlanta" name="destination">
+                <option value="Boston" name="destination">
+                <option value="Chicago" name="destination">
+                <option value="Houston" name="destination">
+                <option value="Las Vegas" name="destination">
+                <option value="Los Angeles" name="destination">
+                <option value="Miami" name="destination">
+                <option value="New Orleans" name="destination">
+                <option value="New York" name="destination">
+                <option value="Philadelphia" name="destination">
+                <option value="Washington DC" name="destination">
+          </datalist>
+    </div>
+    <input class="form-group" class="form-control" id="disabledInput" type="text" placeholder="December 1-December 15, 2019" disabled style="height: 30px;">
+    <input type="submit" id="homepageSubmit" class="btn btn-default">
+</form>
+</div>
+
+</body>
+</html>
